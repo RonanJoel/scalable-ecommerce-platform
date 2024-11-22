@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t frontend ./src/frontend
+    - docker build -t backend ./src/backend
+
+test:
+  stage: test
+  script:
+    - npm run test --prefix src/frontend
+    - npm run test --prefix src/backend
+
+deploy:
+  stage: deploy
+  script:
+    - kubectl apply -f infrastructure/kubernetes/

@@ -1,0 +1,11 @@
+{
+    "dashboard": {
+      "panels": [
+        {
+          "type": "graph",
+          "title": "CPU Usage"
+        }
+      ]
+    }
+  }
+  

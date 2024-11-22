@@ -58,57 +58,62 @@ Ensure the following tools are installed:
 🚀 Installation
 
     Clone the repository:
+    git clone https://github.com/yourusername/scalable-ecommerce-platform.git  
+    cd scalable-ecommerce-platform  
 
-git clone https://github.com/yourusername/scalable-ecommerce-platform.git  
-cd scalable-ecommerce-platform  
-
-Set up AWS credentials:
-
+### Set up AWS credentials:
+```
 aws configure  
+```
 
-Initialize Terraform:
+### Initialize Terraform:
 
+```
 cd infrastructure/terraform  
 terraform init  
+```
 
 Build Docker images:
 
     docker build -t shopx-frontend ./src/frontend  
     docker build -t shopx-backend ./src/backend  
 
-🏗️ How to Run the Project
+### 🏗️ How to Run the Project
 🌐 Step 1: Provision Cloud Infrastructure
 
 Run Terraform to set up cloud resources:
-
+```
 terraform apply -auto-approve  
+```
 
-🛠️ Step 2: Deploy Kubernetes Services
+### 🛠️ Step 2: Deploy Kubernetes Services
 
 Apply Kubernetes deployment files:
-
+```
 kubectl apply -f infrastructure/kubernetes/deployment.yaml  
 kubectl apply -f infrastructure/kubernetes/service.yaml  
+```
 
 🔄 Step 3: Set Up CI/CD Pipelines
 
     GitLab CI: Use ci-cd/gitlab-ci.yml.
     Jenkins: Use ci-cd/Jenkinsfile.
 
-📈 Step 4: Configure Monitoring
+### 📈 Step 4: Configure Monitoring
 
 Set up Prometheus and Grafana with:
-
+```
 kubectl apply -f monitoring/prometheus.yml  
 kubectl apply -f monitoring/grafana-dashboard.json  
+```
 
 🤖 Step 5: Automate with Scripts
 
 Use automation scripts:
-
+```
 bash scripts/setup.sh  
 bash scripts/clean.sh  
-
+```
 🔧 Terraform Setup
 
     Define your cloud resources in main.tf.

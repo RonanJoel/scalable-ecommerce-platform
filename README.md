@@ -49,6 +49,8 @@ scalable-ecommerce-platform/
 └── .gitignore                    # Git ignore file
 └── docker-compose.yml            # Docker Compose for local setup
 
+```
+
 Prerequisites
 
 Before you start, ensure you have the following installed:
